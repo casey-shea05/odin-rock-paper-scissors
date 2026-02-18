@@ -1,9 +1,6 @@
 // Variables
 const choices = ["rock", "paper", "scissors"];
 
-let computerChoice = "";
-let humanChoice = "";
-
 // Functions
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -14,14 +11,14 @@ function getComputerChoice() {
   const index = getRandomInt(3);
 
   // get rock paper or scissors based on random index
-  computerChoice = choices[index];
-  
+  const computerChoice = choices[index];
+
   return computerChoice;
 }
 
 function getHumanChoice() {
   // get user input
-  humanChoice = window.prompt("Pick your fighter! Rock, Paper or Scissors?", "");
+  const humanChoice = window.prompt("Pick your fighter! Rock, Paper or Scissors?", "");
 
   return humanChoice;
 }
