@@ -4,9 +4,6 @@ const choices = ["rock", "paper", "scissors"];
 let humanScore = 0;
 let computerScore = 0;
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
 // Helper functions
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -25,8 +22,6 @@ function getComputerChoice() {
   // get rock paper or scissors based on random index
   const computerChoice = choices[index];
 
-  console.log(computerChoice);
-
   return computerChoice;
 }
 
@@ -35,8 +30,6 @@ function getHumanChoice() {
   let humanChoice = window.prompt(
     "Pick your fighter! Rock, Paper or Scissors?",
   );
-
-  console.log(humanChoice);
 
   return humanChoice;
 }
@@ -76,12 +69,16 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-// function playGame() {
-//   for (let i = 0; i < 5; i++) {
-//     playRound(humanSelection, computerSelection);
-//   }
+function playGame() {
+  for (let i = 0; i < 5; i++) {
 
-//   console.log("Thanks for playing!");
-// }
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice();
 
-// playGame();
+    playRound(humanSelection, computerSelection);
+  }
+
+  console.log("Thanks for playing!");
+}
+
+playGame();
